@@ -4,7 +4,8 @@
     *ngIf="currentView == 'list'"
     [sites]="sites"
     (onAddNewSite)="startAdd()"
-    (onEditSite)="startEdit($event)">
+    (onEditSite)="startEdit($event)"
+    (onDeleteSite)="startDelete($event)">
   </app-site-list>
   <app-add-site
     *ngIf="currentView == 'add'"
@@ -18,4 +19,10 @@
     (onSaveThis)="siteSaved($event)"
     (onCancelThis)="navigateTo('list')">
   </app-edit-site>
+  <app-delete-site
+    *ngIf="currentView == 'delete'"
+    [site]="currentSite"
+    (onDeleteThis)="siteDeleted($event)"
+    (onCancelThis)="navigateTo('list')">
+  </app-delete-site>
 </div>

@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { SiteListComponent } from './site-list/site-list.component';
 import { AddSiteComponent } from './add-site/add-site.component';
 import { EditSiteComponent } from './edit-site/edit-site.component';
+import { DeleteSiteComponent } from './delete-site/delete-site.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SiteListComponent,
     AddSiteComponent,
-    EditSiteComponent
+    EditSiteComponent,
+    DeleteSiteComponent
   ],
   imports: [
     BrowserModule,

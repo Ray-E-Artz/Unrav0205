@@ -10,13 +10,17 @@ export class SiteListComponent implements OnInit {
   @Input() sites: DiveSite[];
   @Output()onAddNewSite = new EventEmitter();
   @Output() onEditSite = new EventEmitter<DiveSite>();
+  @Output() onDeleteSite = new EventEmitter<DiveSite>();
 
-  addNewSite() {
+    addNewSite() {
     this.onAddNewSite.emit(null);
   }
 
   editThisSite(site: DiveSite) {
     this.onEditSite.emit(site);
+  }
+  deleteThisSite(site: DiveSite) {
+    this.onDeleteSite.emit(site);
   }
 
   constructor() { }
