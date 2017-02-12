@@ -1,3 +1,21 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container-fluid">
+  <h1>Dive Site Maintenance</h1>
+  <app-site-list
+    *ngIf="currentView == 'list'"
+    [sites]="sites"
+    (onAddNewSite)="startAdd()"
+    (onEditSite)="startEdit($event)">
+  </app-site-list>
+  <app-add-site
+    *ngIf="currentView == 'add'"
+    [siteId]="newSiteId"
+    (onAddThis)="siteAdded($event)"
+    (onCancelThis)="navigateTo('list')">
+  </app-add-site>
+  <app-edit-site
+    *ngIf="currentView == 'edit'"
+    [site]="currentSite"
+    (onSaveThis)="siteSaved($event)"
+    (onCancelThis)="navigateTo('list')">
+  </app-edit-site>
+</div>
